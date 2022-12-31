@@ -1,0 +1,25 @@
+<p>departments works!</p>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   
+    <ng-container matColumnDef="id">
+      <th mat-header-cell class="hdrcell" *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+   
+    
+    <ng-container matColumnDef="department">
+      <th mat-header-cell class="hdrcell" *matHeaderCellDef> Department </th>
+      <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+    </ng-container>
+  
+    <!-- <ng-container matColumnDef="department">
+      <th mat-header-cell *matHeaderCellDef> time </th>
+      <td mat-cell *matCellDef="let element; let i = index" > 
+          <input type="text" formControlName="department" placeholder="Time"> 
+      </td>
+    </ng-container> -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
